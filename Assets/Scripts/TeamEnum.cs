@@ -1,0 +1,1 @@
+public enum Team { North, South };
