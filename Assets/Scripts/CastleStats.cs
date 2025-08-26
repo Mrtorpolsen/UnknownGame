@@ -13,6 +13,8 @@ public class CastleStats : MonoBehaviour, IUnit
     [SerializeField] public float attackSpeed = 0f;
     [SerializeField] public float attackRange = 0f;
     [SerializeField] public float hitRadius = 0.26f;
+    [SerializeField] public float movementSpeed = 0f;
+
 
     [SerializeField] public Team team;
     public GameObject GetGameObject() => gameObject;
@@ -22,6 +24,7 @@ public class CastleStats : MonoBehaviour, IUnit
     public float GetAttackSpeed() => attackSpeed;
     public bool GetIsAlive() => currentHealth > 0;
     public float GetHitRadius() => hitRadius;
+    public float GetMovementSpeed() => movementSpeed;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

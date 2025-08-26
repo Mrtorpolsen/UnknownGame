@@ -5,6 +5,7 @@ public class UnitSpawner : MonoBehaviour
     [Header("Reference")]
     [SerializeField] public GameObject fighterPrefab;
     [SerializeField] public GameObject rangerPrefab;
+    [SerializeField] public GameObject cavalierPrefab;
     [SerializeField] private Transform northSpawn;
     [SerializeField] private Transform southSpawn;
 
@@ -17,6 +18,10 @@ public class UnitSpawner : MonoBehaviour
     {
         SpawnUnit(rangerPrefab, northSpawn, Team.North);
     }
+    public void SpawnNorthCavalier()
+    {
+        SpawnUnit(cavalierPrefab, northSpawn, Team.North);
+    }
     public void SpawnSouthFighter()
     {
         SpawnUnit(fighterPrefab, southSpawn, Team.South);
@@ -24,6 +29,10 @@ public class UnitSpawner : MonoBehaviour
     public void SpawnSouthRanger()
     {
         SpawnUnit(rangerPrefab, southSpawn, Team.South);
+    }
+    public void SpawnSouthCavalier()
+    {
+        SpawnUnit(cavalierPrefab, southSpawn, Team.South);
     }
 
     public void SpawnUnit(GameObject prefab, Transform spawnPoint, Team team)

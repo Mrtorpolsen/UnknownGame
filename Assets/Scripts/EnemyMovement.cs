@@ -6,7 +6,6 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
 
     [Header("Attributes")]
-    [SerializeField] private float moveSpeed = 2f;
     [SerializeField] public bool canMove;
 
     private FindTarget findTarget;
@@ -38,7 +37,7 @@ public class EnemyMovement : MonoBehaviour
             if (t != null)
             {
                 Vector2 direction = (target.GetTransform().position - transform.position).normalized;
-                rb.linearVelocity = direction * moveSpeed;
+                rb.linearVelocity = direction * rb.GetComponent<IUnit>().GetMovementSpeed();
             }
         }
         SeperationForce();

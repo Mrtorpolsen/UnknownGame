@@ -14,6 +14,8 @@ public class FighterStats : UnitStats, IUnit
     [SerializeField] public float attackSpeed = 1f;
     [SerializeField] public float attackRange = 0.25f;
     [SerializeField] public float hitRadius = 0.135f;
+    [SerializeField] public float movementSpeed = 2f;
+
 
     public override Team Team { get; set; }
     public override int Cost => cost;
@@ -24,6 +26,8 @@ public class FighterStats : UnitStats, IUnit
     public float GetAttackSpeed() => attackSpeed;
     public bool GetIsAlive() => currentHealth > 0;
     public float GetHitRadius() => hitRadius;
+    public float GetMovementSpeed() => movementSpeed;
+
     public Transform GetTransform()
     {
         return (this != null) ? transform : null;
