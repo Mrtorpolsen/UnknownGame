@@ -595,7 +595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 8916063152254937078}
   healthBar: {fileID: 0}
-  cost: 50
+  cost: 100
   maxHealth: 200
   currentHealth: 0
   attackDamage: 20

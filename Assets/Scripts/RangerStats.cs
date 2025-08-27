@@ -83,8 +83,6 @@ public class RangerStats : UnitStats, IUnit
 
     private void HandleArrowHit(ITargetable target, int damage)
     {
-        Debug.Log("arrowhit");
-
         combat.ApplyProjectileDamage(target, damage);
     }
 }

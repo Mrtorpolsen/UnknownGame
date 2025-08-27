@@ -65,10 +65,8 @@ public class Combat : MonoBehaviour
     }
     public void ApplyProjectileDamage(ITargetable target, int damage)
     {
-        Debug.Log("Is it here?");
         if (target != null && target.GetIsAlive())
         {
-            Debug.Log("dmg");
             target.TakeDamage(damage);
         }
     }

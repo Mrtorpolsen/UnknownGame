@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     [Header("References")]
     [SerializeField] public Canvas gameUI;
+    [SerializeField] public SpawnMenuController spawnMenu;
 
     [Header("Attributes")]
     [SerializeField] float currencyTimer = 0f;
@@ -84,5 +85,6 @@ public class GameManager : MonoBehaviour
         winningTeam = team == Team.North ? Team.North : Team.South;
         gameUI.gameObject.SetActive(isGameOver);
         isGameRunning = false;
+        spawnMenu.isOpen = false;
     }
 }

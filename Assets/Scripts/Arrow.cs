@@ -43,7 +43,6 @@ public class Arrow : MonoBehaviour
         if (targetable != null && targetable.GetIsAlive())
         {
             OnHit?.Invoke(targetable, damage);
-            Debug.Log("Collided");
             Destroy(gameObject);
         }
     }
