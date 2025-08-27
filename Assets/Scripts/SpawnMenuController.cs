@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SpawnMenuController : MonoBehaviour
 {
@@ -23,7 +22,6 @@ public class SpawnMenuController : MonoBehaviour
         else
         {
             panelAnimator.SetBool("isOpen", false);
-            menuPanel.gameObject.SetActive(false);
             // Optional: disable after animation ends
         }
     }

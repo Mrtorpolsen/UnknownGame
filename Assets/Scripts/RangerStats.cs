@@ -4,19 +4,19 @@ using UnityEngine;
 public class RangerStats : UnitStats, IUnit
 {
     [Header("Reference")]
-    [SerializeField] public GameObject unit;
+    [SerializeField] private GameObject unit;
     [SerializeField] FloatingHealthBar healthBar;
-    [SerializeField] public GameObject arrowPrefab;
+    [SerializeField] private GameObject arrowPrefab;
 
     [Header("Attributes")]
-    [SerializeField] public int cost = 75;
-    [SerializeField] public int maxHealth = 100;
-    [SerializeField] public int attackDamage = 15;
-    [SerializeField] public int currentHealth;
-    [SerializeField] public float attackRange = 1.5f;
-    [SerializeField] public float attackSpeed = 0.5f;
-    [SerializeField] public float hitRadius = 0.135f;
-    [SerializeField] public float movementSpeed = 1.75f;
+    [SerializeField] private int cost = 75;
+    [SerializeField] private int maxHealth = 100;
+    [SerializeField] private int attackDamage = 15;
+    [SerializeField] private int currentHealth;
+    [SerializeField] private float attackRange = 1.5f;
+    [SerializeField] private float attackSpeed = 0.5f;
+    [SerializeField] private float hitRadius = 0.135f;
+    [SerializeField] private float movementSpeed = 1.75f;
 
 
     private Combat combat;

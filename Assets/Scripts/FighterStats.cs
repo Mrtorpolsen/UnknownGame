@@ -3,18 +3,18 @@ using UnityEngine;
 public class FighterStats : UnitStats, IUnit
 {
     [Header("Reference")]
-    [SerializeField] public GameObject unit;
+    [SerializeField] private GameObject unit;
     [SerializeField] FloatingHealthBar healthBar;
     
     [Header("Attributes")]
-    [SerializeField] public int cost = 50;
-    [SerializeField] public int maxHealth = 200;
-    [SerializeField] public int currentHealth;
-    [SerializeField] public int attackDamage = 20;
-    [SerializeField] public float attackSpeed = 1f;
-    [SerializeField] public float attackRange = 0.25f;
-    [SerializeField] public float hitRadius = 0.135f;
-    [SerializeField] public float movementSpeed = 2f;
+    [SerializeField] private int cost = 50;
+    [SerializeField] private int maxHealth = 200;
+    [SerializeField] private int currentHealth;
+    [SerializeField] private int attackDamage = 20;
+    [SerializeField] private float attackSpeed = 1f;
+    [SerializeField] private float attackRange = 0.25f;
+    [SerializeField] private float hitRadius = 0.135f;
+    [SerializeField] private float movementSpeed = 2f;
 
 
     public override Team Team { get; set; }

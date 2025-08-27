@@ -287,7 +287,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4453514862014735567}
-  moveSpeed: 2
   canMove: 0
 --- !u!114 &7478925129009968955
 MonoBehaviour:
@@ -311,6 +310,7 @@ MonoBehaviour:
   attackRange: 1.5
   attackSpeed: 0.5
   hitRadius: 0.135
+  movementSpeed: 1.75
 --- !u!114 &4235267402526415989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,6 +529,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 9075405386718464632}
+  target: {fileID: 2170735035447809818}
+  offset: {x: 0, y: 0.15, z: 0}
 --- !u!1 &5794640683882645432
 GameObject:
   m_ObjectHideFlags: 0
