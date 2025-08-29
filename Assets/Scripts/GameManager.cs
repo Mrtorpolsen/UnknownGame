@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] int incomePerTick = 20;
     [SerializeField] public bool isGameOver = false;
     [SerializeField] public bool isGameRunning = false;
-    [SerializeField] Team winningTeam;
+    [SerializeField] public Team winningTeam;
 
     private void Awake()
     {
@@ -41,13 +41,6 @@ public class GameManager : MonoBehaviour
         UpdateCurrencyText();
     }
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-    // Update is called once per frame
     void Update()
     {
         if (isGameRunning)
@@ -82,7 +75,7 @@ public class GameManager : MonoBehaviour
     public void SetGameOver(bool gameOver, Team team)
     {
         isGameOver = gameOver;
-        winningTeam = team == Team.North ? Team.North : Team.South;
+        winningTeam = team == Team.North ? Team.South : Team.North;
         gameUI.gameObject.SetActive(isGameOver);
         isGameRunning = false;
         spawnMenu.isOpen = false;

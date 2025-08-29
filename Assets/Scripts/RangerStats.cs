@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class RangerStats : UnitStats, IUnit
@@ -7,6 +6,7 @@ public class RangerStats : UnitStats, IUnit
     [SerializeField] private GameObject unit;
     [SerializeField] FloatingHealthBar healthBar;
     [SerializeField] private GameObject arrowPrefab;
+    [SerializeField] private GameObject unitPrefab;
 
     [Header("Attributes")]
     [SerializeField] private int cost = 75;
@@ -31,6 +31,8 @@ public class RangerStats : UnitStats, IUnit
     public bool GetIsAlive() => currentHealth > 0;
     public float GetHitRadius() => hitRadius;
     public float GetMovementSpeed() => movementSpeed;
+    public int GetCost() => cost;
+
 
     public Transform GetTransform()
     {

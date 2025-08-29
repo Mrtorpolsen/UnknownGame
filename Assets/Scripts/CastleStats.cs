@@ -5,8 +5,11 @@ public class CastleStats : MonoBehaviour, IUnit
     [Header("Reference")]
     [SerializeField] public GameObject castle;
     [SerializeField] FloatingHealthBar healthBar;
+    [SerializeField] private GameObject unitPrefab;
+
 
     [Header("Attributes")]
+    [SerializeField] public int cost = 0;
     [SerializeField] public int maxHealth = 500;
     [SerializeField] public int currentHealth;
     [SerializeField] public int attackDamage = 0;
@@ -14,7 +17,6 @@ public class CastleStats : MonoBehaviour, IUnit
     [SerializeField] public float attackRange = 0f;
     [SerializeField] public float hitRadius = 0.26f;
     [SerializeField] public float movementSpeed = 0f;
-
 
     [SerializeField] public Team team;
     public GameObject GetGameObject() => gameObject;
@@ -25,6 +27,9 @@ public class CastleStats : MonoBehaviour, IUnit
     public bool GetIsAlive() => currentHealth > 0;
     public float GetHitRadius() => hitRadius;
     public float GetMovementSpeed() => movementSpeed;
+    public int GetCost() => cost;
+
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

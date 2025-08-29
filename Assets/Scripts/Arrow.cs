@@ -9,7 +9,7 @@ public class Arrow : MonoBehaviour
 
 
     [Header("Attributes")]
-    [SerializeField] private float speed = 1.5f;
+    [SerializeField] private float speed = 2.5f;
     [SerializeField] private int damage;
 
 

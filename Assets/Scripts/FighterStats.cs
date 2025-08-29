@@ -5,7 +5,9 @@ public class FighterStats : UnitStats, IUnit
     [Header("Reference")]
     [SerializeField] private GameObject unit;
     [SerializeField] FloatingHealthBar healthBar;
-    
+    [SerializeField] private GameObject unitPrefab;
+
+
     [Header("Attributes")]
     [SerializeField] private int cost = 50;
     [SerializeField] private int maxHealth = 200;
@@ -27,6 +29,8 @@ public class FighterStats : UnitStats, IUnit
     public bool GetIsAlive() => currentHealth > 0;
     public float GetHitRadius() => hitRadius;
     public float GetMovementSpeed() => movementSpeed;
+    public int GetCost() => cost;
+
 
     public Transform GetTransform()
     {

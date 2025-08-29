@@ -9,4 +9,5 @@ public interface ITargetable
     void Die();
     bool GetIsAlive();
     float GetHitRadius();
+    int GetCost();
 }

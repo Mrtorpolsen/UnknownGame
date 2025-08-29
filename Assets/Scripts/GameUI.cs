@@ -10,11 +10,6 @@ public class GameUI : MonoBehaviour
     [SerializeField] private TMP_Text buttonText;
     [SerializeField] private Button button;
 
-    [Header("Attributes")]
-    [SerializeField] public Team winningTeam;
-
-
-    // Update is called once per frame
     void Update()
     {
         if (GameManager.main == null)
@@ -24,7 +19,7 @@ public class GameUI : MonoBehaviour
         }
         if (GameManager.main.isGameOver == true)
         {
-            text.text = $"{winningTeam.ToString()} won!";
+            text.text = $"{GameManager.main.winningTeam.ToString()} won!";
             buttonText.text = "Play Again!";
         } else
         {

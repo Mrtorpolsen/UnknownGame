@@ -3,46 +3,72 @@ using UnityEngine;
 public class UnitSpawner : MonoBehaviour
 {
     [Header("Reference")]
-    [SerializeField] public GameObject fighterPrefab;
-    [SerializeField] public GameObject rangerPrefab;
-    [SerializeField] public GameObject cavalierPrefab;
     [SerializeField] private Transform northSpawn;
     [SerializeField] private Transform southSpawn;
 
+    [Header("Prefabs")]
+    [SerializeField] private GameObject fighterPrefab;
+    [SerializeField] private GameObject rangerPrefab;
+    [SerializeField] private GameObject cavalierPrefab;
 
-    public void SpawnNorthFighter()
+
+    public void SpawnNorthFigterUI()
     {
-        SpawnUnit(fighterPrefab, northSpawn, Team.North);
+        SpawnNorthFighter();
     }
-    public void SpawnNorthRanger()
+    public void SpawnNorthRangerUI()
     {
-        SpawnUnit(rangerPrefab, northSpawn, Team.North);
+        SpawnNorthRanger();
     }
-    public void SpawnNorthCavalier()
+    public void SpawnNorthCavalierUI()
     {
-        SpawnUnit(cavalierPrefab, northSpawn, Team.North);
+        SpawnNorthCavalier();
     }
-    public void SpawnSouthFighter()
+    public bool SpawnNorthFighter()
     {
-        SpawnUnit(fighterPrefab, southSpawn, Team.South);
+        return SpawnUnit(fighterPrefab, northSpawn, Team.North);
     }
-    public void SpawnSouthRanger()
+    public bool SpawnNorthRanger()
     {
-        SpawnUnit(rangerPrefab, southSpawn, Team.South);
+        return SpawnUnit(rangerPrefab, northSpawn, Team.North);
     }
-    public void SpawnSouthCavalier()
+    public bool SpawnNorthCavalier()
     {
-        SpawnUnit(cavalierPrefab, southSpawn, Team.South);
+        return SpawnUnit(cavalierPrefab, northSpawn, Team.North);
+    }
+    public void SpawnSouthFigterUI()
+    {
+        SpawnSouthFighter();
+    }
+    public void SpawnSouthRangerUI()
+    {
+        SpawnSouthRanger();
+    }
+    public void SpawnSouthCavalierUI()
+    {
+        SpawnSouthCavalier();
+    }
+    public bool SpawnSouthFighter()
+    {
+        return SpawnUnit(fighterPrefab, southSpawn, Team.South);
+    }
+    public bool SpawnSouthRanger()
+    {
+        return SpawnUnit(rangerPrefab, southSpawn, Team.South);
+    }
+    public bool SpawnSouthCavalier()
+    {
+        return SpawnUnit(cavalierPrefab, southSpawn, Team.South);
     }
 
-    public void SpawnUnit(GameObject prefab, Transform spawnPoint, Team team)
+    public bool SpawnUnit(GameObject prefab, Transform spawnPoint, Team team)
     {
         UnitStats stats = prefab.GetComponent<UnitStats>();
 
         if (stats == null)
         {
             Debug.LogError("Prefab has no UnitStats component!");
-            return;
+            return false;
         }
 
         if (GameManager.main.currency[team] >= stats.Cost)
@@ -54,10 +80,14 @@ public class UnitSpawner : MonoBehaviour
             unit.layer = LayerMask.NameToLayer(team.ToString() + "Team");
 
             GameManager.main.SubtractCurrency(team, stats.Cost);
+
+            return true;
         }
         else
         {
             Debug.Log($"{team} - Insufficient currency");
+
+            return false;
         }
     }
 }   

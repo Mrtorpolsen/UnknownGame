@@ -317,7 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 4595989387359577063}
   target: {fileID: 3983287252928057365}
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 0.28, z: 0}
 --- !u!1 &4467444779989242713
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,6 +503,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   castle: {fileID: 4467444779989242713}
   healthBar: {fileID: 0}
+  unitPrefab: {fileID: 0}
+  cost: 0
   maxHealth: 500
   currentHealth: 500
   attackDamage: 0

@@ -4389,8 +4389,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 650984040}
-        m_TargetAssemblyTypeName: EnemySpawner, Assembly-CSharp
-        m_MethodName: SpawnNorthRanger
+        m_TargetAssemblyTypeName: UnitSpawner, Assembly-CSharp
+        m_MethodName: SpawnNorthRangerUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5115,11 +5115,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86961333d275fd04f926ab546360b941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  northSpawn: {fileID: 2061042645}
+  southSpawn: {fileID: 605416890}
   fighterPrefab: {fileID: 6717628542700303866, guid: 54468932150093641ae59057b7e9886d, type: 3}
   rangerPrefab: {fileID: 3501163535796704365, guid: 46ad8408be13107488ddf6a6340e5227, type: 3}
   cavalierPrefab: {fileID: 8916063152254937078, guid: b162035f5f53c22428a2ddeb61f1c82f, type: 3}
-  northSpawn: {fileID: 2061042645}
-  southSpawn: {fileID: 605416890}
 --- !u!4 &650984041
 Transform:
   m_ObjectHideFlags: 0
@@ -7380,7 +7380,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 650984040}
         m_TargetAssemblyTypeName: UnitSpawner, Assembly-CSharp
-        m_MethodName: SpawnNorthCavalier
+        m_MethodName: SpawnSouthCavalierUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7460,6 +7460,7 @@ MonoBehaviour:
   unit: {fileID: 0}
   healthBar: {fileID: 0}
   arrowPrefab: {fileID: 0}
+  unitPrefab: {fileID: 0}
   cost: 75
   maxHealth: 100
   attackDamage: 15
@@ -8046,6 +8047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 0}
   healthBar: {fileID: 0}
+  unitPrefab: {fileID: 0}
   cost: 50
   maxHealth: 200
   currentHealth: 0
@@ -9526,6 +9528,54 @@ RectTransform:
   m_AnchoredPosition: {x: 385, y: -829}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1263956705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1263956707}
+  - component: {fileID: 1263956706}
+  m_Layer: 0
+  m_Name: EnemyAI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1263956706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263956705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf0e8440359b4b42a6459078bc2013f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fighterPrefab: {fileID: 6717628542700303866, guid: 54468932150093641ae59057b7e9886d, type: 3}
+  rangerPrefab: {fileID: 3501163535796704365, guid: 46ad8408be13107488ddf6a6340e5227, type: 3}
+  cavalierPrefab: {fileID: 8916063152254937078, guid: b162035f5f53c22428a2ddeb61f1c82f, type: 3}
+  unitSpawner: {fileID: 650984040}
+--- !u!4 &1263956707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263956705}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.60352, y: -1.09456, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1265204224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9803,8 +9853,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 650984040}
-        m_TargetAssemblyTypeName: EnemySpawner, Assembly-CSharp
-        m_MethodName: SpawnSouthRanger
+        m_TargetAssemblyTypeName: UnitSpawner, Assembly-CSharp
+        m_MethodName: SpawnSouthRangerUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13206,8 +13256,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 650984040}
-        m_TargetAssemblyTypeName: EnemySpawner, Assembly-CSharp
-        m_MethodName: SpawnSouthFighter
+        m_TargetAssemblyTypeName: UnitSpawner, Assembly-CSharp
+        m_MethodName: SpawnSouthFigterUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13354,8 +13404,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 650984040}
-        m_TargetAssemblyTypeName: EnemySpawner, Assembly-CSharp
-        m_MethodName: SpawnNorthFighter
+        m_TargetAssemblyTypeName: UnitSpawner, Assembly-CSharp
+        m_MethodName: SpawnNorthFigterUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14754,7 +14804,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 650984040}
         m_TargetAssemblyTypeName: UnitSpawner, Assembly-CSharp
-        m_MethodName: SpawnSouthCavalier
+        m_MethodName: SpawnSouthCavalierUI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15673,3 +15723,4 @@ SceneRoots:
   - {fileID: 988349592}
   - {fileID: 1052131046}
   - {fileID: 1839268188}
+  - {fileID: 1263956707}

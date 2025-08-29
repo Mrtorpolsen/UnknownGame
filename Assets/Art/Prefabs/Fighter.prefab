@@ -583,6 +583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unit: {fileID: 6717628542700303866}
   healthBar: {fileID: 0}
+  unitPrefab: {fileID: 0}
   cost: 50
   maxHealth: 200
   currentHealth: 0
