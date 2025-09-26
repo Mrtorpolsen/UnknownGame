@@ -578,19 +578,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 6717628542700303866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65decf5bcab18dc418796d478e73479b, type: 3}
+  m_Script: {fileID: 11500000, guid: e38a691c2e273ea4f82c8c503562253b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 6717628542700303866}
-  healthBar: {fileID: 0}
-  unitPrefab: {fileID: 0}
+  healthBar: {fileID: 1298340878862551963}
   cost: 50
   maxHealth: 200
   currentHealth: 0
   attackDamage: 20
   attackSpeed: 1
   attackRange: 0.25
-  hitRadius: 0.1
+  hitRadius: 0.135
   movementSpeed: 2
 --- !u!114 &-6907675892120128662
 MonoBehaviour:

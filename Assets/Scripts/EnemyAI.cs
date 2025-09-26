@@ -8,6 +8,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private GameObject fighterPrefab;
     [SerializeField] private GameObject rangerPrefab;
     [SerializeField] private GameObject cavalierPrefab;
+    [SerializeField] private GameObject gatePrefab;
     [SerializeField] private UnitSpawner unitSpawner;
 
     private Queue<GameObject> spawnQueue;

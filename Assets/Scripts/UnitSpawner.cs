@@ -1,15 +1,25 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UnitSpawner : MonoBehaviour
 {
-    [Header("Reference")]
+    [Header("North Reference")]
     [SerializeField] private Transform northSpawn;
+    [SerializeField] private Transform northGateClose;
+    [SerializeField] private Transform northGateIntermediate;
+    [SerializeField] private Transform northGateFar;
+
+    [Header("South Reference")]
     [SerializeField] private Transform southSpawn;
+    [SerializeField] private Transform southGateClose;
+    [SerializeField] private Transform southGateIntermediate;
+    [SerializeField] private Transform southGateFar;
 
     [Header("Prefabs")]
     [SerializeField] private GameObject fighterPrefab;
     [SerializeField] private GameObject rangerPrefab;
     [SerializeField] private GameObject cavalierPrefab;
+    [SerializeField] private GameObject gatePrefab;
 
 
     public void SpawnNorthFigterUI()
@@ -21,6 +31,10 @@ public class UnitSpawner : MonoBehaviour
         SpawnNorthRanger();
     }
     public void SpawnNorthCavalierUI()
+    {
+        SpawnNorthCavalier();
+    }
+    public void SpawnNorthGateCloseUI()
     {
         SpawnNorthCavalier();
     }
@@ -36,6 +50,10 @@ public class UnitSpawner : MonoBehaviour
     {
         return SpawnUnit(cavalierPrefab, northSpawn, Team.North);
     }
+    public bool SpawnNorthGateClose()
+    {
+        return SpawnUnit(gatePrefab, northGateClose, Team.North);
+    }
     public void SpawnSouthFigterUI()
     {
         SpawnSouthFighter();
@@ -48,6 +66,18 @@ public class UnitSpawner : MonoBehaviour
     {
         SpawnSouthCavalier();
     }
+    public void SpawnSouthGateCloseUI()
+    {
+        SpawnSouthGateClose();
+    }
+    public void SpawnSouthGateIntermediateUI()
+    {
+        SpawnSouthGateIntermediate();
+    }
+    public void SpawnSouthGateFarUI()
+    {
+        SpawnSouthGateFar();
+    }
     public bool SpawnSouthFighter()
     {
         return SpawnUnit(fighterPrefab, southSpawn, Team.South);
@@ -59,6 +89,18 @@ public class UnitSpawner : MonoBehaviour
     public bool SpawnSouthCavalier()
     {
         return SpawnUnit(cavalierPrefab, southSpawn, Team.South);
+    }
+    public bool SpawnSouthGateClose()
+    {
+        return SpawnUnit(gatePrefab, southGateClose, Team.South);
+    }
+    public bool SpawnSouthGateIntermediate()
+    {
+        return SpawnUnit(gatePrefab, southGateIntermediate, Team.South);
+    }
+    public bool SpawnSouthGateFar()
+    {
+        return SpawnUnit(gatePrefab, southGateFar, Team.South);
     }
 
     public bool SpawnUnit(GameObject prefab, Transform spawnPoint, Team team)
@@ -74,10 +116,27 @@ public class UnitSpawner : MonoBehaviour
         if (GameManager.main.currency[team] >= stats.Cost)
         {
             GameObject unit = Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
+            SpriteRenderer sr = unit.GetComponent<SpriteRenderer>();
+
+            if (sr != null) 
+            {
+                string teamColorCode = team == Team.North ? "#1E3A8A" : "#DC2626";
+                Color teamColor;
+
+                if (UnityEngine.ColorUtility.TryParseHtmlString(teamColorCode, out teamColor))
+                {
+                    sr.color = teamColor;
+                }
+            }
+            
             UnitStats unitStats = unit.GetComponent<UnitStats>();
 
             unitStats.GetComponent<UnitStats>().Team = team;
-            unit.layer = LayerMask.NameToLayer(team.ToString() + "Team");
+
+            if(prefab != gatePrefab)
+            {
+                unit.layer = LayerMask.NameToLayer(team.ToString() + "Team");
+            }
 
             GameManager.main.SubtractCurrency(team, stats.Cost);
 
@@ -85,7 +144,10 @@ public class UnitSpawner : MonoBehaviour
         }
         else
         {
-            Debug.Log($"{team} - Insufficient currency");
+            if(team == Team.South)
+            {
+                Debug.Log($"{team} - Insufficient currency");
+            }
 
             return false;
         }

@@ -1,15 +1,14 @@
 using UnityEngine;
 
-public class CastleStats : MonoBehaviour, IUnit
+public class GateStats : UnitStats, IUnit
 {
     [Header("Reference")]
-    [SerializeField] public GameObject castle;
+    [SerializeField] public GameObject gate;
     [SerializeField] FloatingHealthBar healthBar;
-    [SerializeField] private GameObject unitPrefab;
 
 
     [Header("Attributes")]
-    [SerializeField] public int cost = 0;
+    [SerializeField] public int cost = 100;
     [SerializeField] public int maxHealth = 500;
     [SerializeField] public int currentHealth;
     [SerializeField] public int attackDamage = 0;
@@ -18,21 +17,17 @@ public class CastleStats : MonoBehaviour, IUnit
     [SerializeField] public float hitRadius = 0.26f;
     [SerializeField] public float movementSpeed = 0f;
 
-    [SerializeField] public Team team;
+    public override Team Team { get; set; }
+    public override int Cost => cost;
     public GameObject GetGameObject() => gameObject;
-    public Team GetTeam() => team;
+    public Team GetTeam() => Team;
     public float GetAttackRange() => attackRange;
     public int GetAttackDamage() => attackDamage;
     public float GetAttackSpeed() => attackSpeed;
     public bool GetIsAlive() => currentHealth > 0;
     public float GetHitRadius() => hitRadius;
     public float GetMovementSpeed() => movementSpeed;
-    public int GetCost() => cost;
 
-
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         healthBar.UpdateHealthBar(currentHealth, maxHealth);
@@ -42,6 +37,8 @@ public class CastleStats : MonoBehaviour, IUnit
     {
         currentHealth = maxHealth;
         healthBar = GetComponentInChildren<FloatingHealthBar>();
+
+        gate.layer = GetTeam() == Team.North ? LayerMask.NameToLayer("SouthTeamGate") : LayerMask.NameToLayer("NorthTeamGate");
     }
     public void TakeDamage(int amount)
     {
@@ -55,20 +52,8 @@ public class CastleStats : MonoBehaviour, IUnit
 
     void Die()
     {
-        Destroy(castle);
-        GameManager.main.SetGameOver(true, team);
+        Destroy(gate);
     }
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    FighterStats otherFighter = collision.gameObject.GetComponent<FighterStats>();
-
-    //    if (otherFighter != null && otherFighter.team != this.team)
-    //    {
-    //        TakeDamage(otherFighter.attackDamage);
-    //        otherFighter.Die();
-    //    }
-    //}
 
     public Transform GetTransform()
     {

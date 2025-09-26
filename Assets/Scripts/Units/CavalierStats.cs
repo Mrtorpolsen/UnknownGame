@@ -1,23 +1,21 @@
 using UnityEngine;
 
-public class FighterStats : UnitStats, IUnit
+public class CavalierStats : UnitStats, IUnit
 {
     [Header("Reference")]
     [SerializeField] private GameObject unit;
     [SerializeField] FloatingHealthBar healthBar;
-    [SerializeField] private GameObject unitPrefab;
 
 
     [Header("Attributes")]
-    [SerializeField] private int cost = 50;
-    [SerializeField] private int maxHealth = 200;
+    [SerializeField] private int cost = 100;
+    [SerializeField] private int maxHealth = 400;
     [SerializeField] private int currentHealth;
-    [SerializeField] private int attackDamage = 20;
-    [SerializeField] private float attackSpeed = 1f;
+    [SerializeField] private int attackDamage = 30;
+    [SerializeField] private float attackSpeed = 0.75f;
     [SerializeField] private float attackRange = 0.25f;
     [SerializeField] private float hitRadius = 0.135f;
-    [SerializeField] private float movementSpeed = 2f;
-
+    [SerializeField] private float movementSpeed = 4f;
 
     public override Team Team { get; set; }
     public override int Cost => cost;
@@ -29,9 +27,6 @@ public class FighterStats : UnitStats, IUnit
     public bool GetIsAlive() => currentHealth > 0;
     public float GetHitRadius() => hitRadius;
     public float GetMovementSpeed() => movementSpeed;
-    public int GetCost() => cost;
-
-
     public Transform GetTransform()
     {
         return (this != null) ? transform : null;
