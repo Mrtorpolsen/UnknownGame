@@ -8,7 +8,7 @@ public class RangerStats : UnitStats, IUnit
     [SerializeField] private GameObject arrowPrefab;
 
     [Header("Attributes")]
-    [SerializeField] private int cost = 75;
+    [SerializeField] private float cost = 75;
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private int attackDamage = 15;
     [SerializeField] private int currentHealth;
@@ -21,7 +21,7 @@ public class RangerStats : UnitStats, IUnit
     private Combat combat;
 
     public override Team Team { get; set; }
-    public override int Cost => cost;
+    public override float Cost => cost;
     public GameObject GetGameObject() => gameObject;
     public Team GetTeam() => Team;
     public float GetAttackRange() => attackRange;

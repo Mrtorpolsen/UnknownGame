@@ -7,14 +7,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager main;
 
-    public TMP_Text northCurrencyText;
     public TMP_Text southCurrencyText;
+    public TMP_Text southIncomeModifierText;
 
     public Transform north;
     public Transform south;
 
-    public Dictionary<Team, int> currency;
-
+    public Dictionary<Team, float> currency;
 
     [Header("References")]
     [SerializeField] public Canvas gameUI;
@@ -23,7 +22,9 @@ public class GameManager : MonoBehaviour
     [Header("Attributes")]
     [SerializeField] float currencyTimer = 0f;
     [SerializeField] float currencyInterval = 1f;
-    [SerializeField] int incomePerTick = 20;
+    [SerializeField] float incomePerTick = 20;
+    [SerializeField] float incomeModifier = 1;
+    [SerializeField] public float incomeUpgradeCost = 200;
     [SerializeField] public bool isGameOver = false;
     [SerializeField] public bool isGameRunning = false;
     [SerializeField] public Team winningTeam;
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
     {
         main = this;
 
-        currency = new Dictionary<Team, int>()
+        currency = new Dictionary<Team, float>()
         {
             { Team.North, 300 },
             { Team.South, 300 },
@@ -51,26 +52,31 @@ public class GameManager : MonoBehaviour
             {
                 currencyTimer = 0f;
 
-                AddCurrency(Team.North, incomePerTick);
                 AddCurrency(Team.South, incomePerTick);
             }
         }
     }
 
-    public void AddCurrency(Team team, int amount)
+    public void AddCurrency(Team team, float amount)
     {
         currency[team] += amount;
         UpdateCurrencyText();
     }
-    public void SubtractCurrency(Team team, int amount)
+    public void SubtractCurrency(Team team, float amount)
     {
         currency[team] -= amount;
         UpdateCurrencyText();
     }
     private void UpdateCurrencyText()
     {
-        northCurrencyText.text = currency[Team.North].ToString();
-        southCurrencyText.text = currency[Team.South].ToString();
+        //northCurrencyText.text = currency[Team.North].ToString();
+        southCurrencyText.text = ((int)currency[Team.South]).ToString();
+    }
+    public void UpgradeIncomeModifier()
+    {
+        incomeModifier = (float)(incomeModifier + 0.2);
+        incomePerTick = incomePerTick * incomeModifier;
+        southIncomeModifierText.text = "x" + incomeModifier.ToString();
     }
     public void SetGameOver(bool gameOver, Team team)
     {

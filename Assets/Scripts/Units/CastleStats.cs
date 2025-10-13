@@ -8,7 +8,7 @@ public class CastleStats : MonoBehaviour, IUnit
 
 
     [Header("Attributes")]
-    [SerializeField] public int cost = 0;
+    [SerializeField] public float cost = 0;
     [SerializeField] public int maxHealth = 500;
     [SerializeField] public int currentHealth;
     [SerializeField] public int attackDamage = 0;

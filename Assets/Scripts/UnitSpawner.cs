@@ -5,9 +5,6 @@ public class UnitSpawner : MonoBehaviour
 {
     [Header("North Reference")]
     [SerializeField] private Transform northSpawn;
-    [SerializeField] private Transform northGateClose;
-    [SerializeField] private Transform northGateIntermediate;
-    [SerializeField] private Transform northGateFar;
 
     [Header("South Reference")]
     [SerializeField] private Transform southSpawn;
@@ -49,10 +46,6 @@ public class UnitSpawner : MonoBehaviour
     public bool SpawnNorthCavalier()
     {
         return SpawnUnit(cavalierPrefab, northSpawn, Team.North);
-    }
-    public bool SpawnNorthGateClose()
-    {
-        return SpawnUnit(gatePrefab, northGateClose, Team.North);
     }
     public void SpawnSouthFigterUI()
     {
@@ -101,6 +94,18 @@ public class UnitSpawner : MonoBehaviour
     public bool SpawnSouthGateFar()
     {
         return SpawnUnit(gatePrefab, southGateFar, Team.South);
+    }
+    public void UpgradeIncome()
+    {
+        if (GameManager.main.currency[Team.South] >= GameManager.main.incomeUpgradeCost)
+        {
+            GameManager.main.UpgradeIncomeModifier();
+            GameManager.main.SubtractCurrency(Team.South, GameManager.main.incomeUpgradeCost);
+        }
+        else
+        {
+            Debug.Log($"{Team.South} - Insufficient currency");
+        }
     }
 
     public bool SpawnUnit(GameObject prefab, Transform spawnPoint, Team team)

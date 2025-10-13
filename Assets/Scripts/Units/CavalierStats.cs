@@ -8,7 +8,7 @@ public class CavalierStats : UnitStats, IUnit
 
 
     [Header("Attributes")]
-    [SerializeField] private int cost = 100;
+    [SerializeField] private float cost = 100;
     [SerializeField] private int maxHealth = 400;
     [SerializeField] private int currentHealth;
     [SerializeField] private int attackDamage = 30;
@@ -18,7 +18,7 @@ public class CavalierStats : UnitStats, IUnit
     [SerializeField] private float movementSpeed = 4f;
 
     public override Team Team { get; set; }
-    public override int Cost => cost;
+    public override float Cost => cost;
     public GameObject GetGameObject() => gameObject;
     public Team GetTeam() => Team;
     public float GetAttackRange() => attackRange;
