@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
         };
 
         UpdateCurrencyText();
+        TimerManager.main.StartTimer();
     }
 
     void Update()
@@ -80,6 +81,7 @@ public class GameManager : MonoBehaviour
     }
     public void SetGameOver(bool gameOver, Team team)
     {
+        TimerManager.main.StopTimer();
         isGameOver = gameOver;
         winningTeam = team == Team.North ? Team.South : Team.North;
         gameUI.gameObject.SetActive(isGameOver);

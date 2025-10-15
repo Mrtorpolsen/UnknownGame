@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
             Debug.LogError("GameManager.main is null!");
             return;
         }
+
         if (GameManager.main.isGameOver == true)
         {
             text.text = $"{GameManager.main.winningTeam.ToString()} won!";
