@@ -5315,7 +5315,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 650984039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da6b5302c72453c45b5a4318ba1d9c09, type: 3}
+  m_Script: {fileID: 11500000, guid: bb1cbfc43f7ec3d4ea6f6f4a8140e4d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   northSpawn: {fileID: 2061042645}
@@ -13579,7 +13579,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1733177081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b8ef1fee385fda41b73f4e54e32afa6, type: 3}
+  m_Script: {fileID: 11500000, guid: 675a1dd3b6ea8a94e801dda224c4b5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1882980882}
@@ -14426,7 +14426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1897632174}
   m_Layer: 0
-  m_Name: Spawners
+  m_Name: Spawns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

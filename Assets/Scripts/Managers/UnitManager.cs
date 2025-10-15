@@ -58,7 +58,7 @@ public class UnitManager : MonoBehaviour
             return false;
         }
 
-        if (GameManager.main.currency[team] >= stats.Cost)
+        if (GameManager.main.currency[team] >= stats.Cost || team == Team.North)
         {
             GameObject unit = Instantiate(prefab, spawnPoint.position, spawnPoint.rotation);
             SpriteRenderer sr = unit.GetComponent<SpriteRenderer>();
@@ -83,7 +83,10 @@ public class UnitManager : MonoBehaviour
                 unit.layer = LayerMask.NameToLayer(team.ToString() + "Team");
             }
 
-            GameManager.main.SubtractCurrency(team, stats.Cost);
+            if(team == Team.South)
+            {
+                GameManager.main.SubtractCurrency(team, stats.Cost);
+            }
 
             return true;
         }
