@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318a6ae8b3568b3429a823b262f4cd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerStats
-  unit: {fileID: 0}
+  unit: {fileID: 87936472045436742}
   towerProjectilePrefab: {fileID: 9402218379871732, guid: ec5ca335582451b4c8cf482c9b7d48ce, type: 3}
   cost: 75
   maxHealth: 100

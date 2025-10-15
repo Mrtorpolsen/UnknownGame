@@ -36,39 +36,38 @@ public class Combat : MonoBehaviour
             }
         }
 
-        if(movement != null)
+        if (target != null && target.GetIsAlive())
         {
-            if (target != null && target.GetIsAlive())
+            Transform t = target.GetTransform();
+            if (t != null)
             {
-                Transform t = target.GetTransform();
-                if (t != null)
-                {
-                    float dist = Vector2.Distance(transform.position, target.GetTransform().position);
-                    float effectiveRange = unit.GetAttackRange() + target.GetHitRadius();
+                float dist = Vector2.Distance(transform.position, target.GetTransform().position);
+                float effectiveRange = unit.GetAttackRange() + target.GetHitRadius();
 
-                    if (dist <= effectiveRange && attackCooldown <= 0)
+                if (dist <= effectiveRange && attackCooldown <= 0)
+                {
+                    attackCooldown = 1f / unit.GetAttackSpeed();
+
+                    if(unit is RangerStats)
                     {
-                        if (unit is RangerStats || unit is TowerStats) 
-                        {
-                            if(unit is RangerStats)
-                            {
-                                (unit as RangerStats).Shoot(target);
-                            }
-                            if(unit is TowerStats)
-                            {
-                                (unit as TowerStats).Shoot(target);
-                            }
-                        } else
-                        {
-                            target.TakeDamage(unit.GetAttackDamage());
-                        }
-                            attackCooldown = 1f / unit.GetAttackSpeed();
+                        (unit as RangerStats).Shoot(target);
                     }
+                    else if(unit is TowerStats)
+                    {
+                        (unit as TowerStats).Shoot(target);
+                    }
+                    else
+                    {
+                        target.TakeDamage(unit.GetAttackDamage());
+                    }
+                }
+                if (movement != null)
+                {
                     movement.canMove = dist > unit.GetAttackRange();
                 }
             }
-            
         }
+
     }
     public void ApplyProjectileDamage(ITargetable target, int damage)
     {

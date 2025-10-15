@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3739245610100278847}
   - component: {fileID: 6688559617855502027}
   - component: {fileID: 6591101023804061662}
-  - component: {fileID: 5924805773512692147}
+  - component: {fileID: 106451985815354453}
   m_Layer: 0
   m_Name: Tower Projectile
   m_TagString: Untagged
@@ -170,7 +170,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &5924805773512692147
+--- !u!114 &106451985815354453
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,9 +179,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 9402218379871732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3f0d3da58146954890bca79ea56ddb6, type: 3}
+  m_Script: {fileID: 11500000, guid: 7467d1ae4ec9f8d428fc8a5aef134540, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerProjectile
   rb: {fileID: 6591101023804061662}
   speed: 2.5
   damage: 0

@@ -5299,6 +5299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 650984041}
   - component: {fileID: 650984040}
+  - component: {fileID: 650984042}
   m_Layer: 0
   m_Name: UnitManager
   m_TagString: Untagged
@@ -5345,6 +5346,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &650984042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650984039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0277d41e710a2a34da935139ce22e2c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BuildManager
+  towerPrefabs:
+  - {fileID: 3296017814138875246, guid: 65f0b2b9586b80346a7573e22fecc536, type: 3}
 --- !u!1001 &665827425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11061,7 +11076,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1439708017}
   - component: {fileID: 1439708018}
-  - component: {fileID: 1439708019}
   - component: {fileID: 1439708020}
   m_Layer: 0
   m_Name: Game Manager
@@ -11111,20 +11125,6 @@ MonoBehaviour:
   isGameOver: 0
   isGameRunning: 0
   winningTeam: 0
---- !u!114 &1439708019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439708015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d90a5c3da91ea0a4f8c5180ecfed9733, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BuildManager
-  towerPrefabs:
-  - {fileID: 87936472045436742, guid: 65f0b2b9586b80346a7573e22fecc536, type: 3}
 --- !u!114 &1439708020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11134,7 +11134,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1439708015}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bebdd37a26c0b340a326f121d4a17e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 3613a75ccff54c647a40165dbd14d3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickManager
 --- !u!4 &1441165824 stripped

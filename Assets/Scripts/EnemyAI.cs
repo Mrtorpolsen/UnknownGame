@@ -34,7 +34,7 @@ public class EnemyAI : MonoBehaviour
 
     private void TrySpawnUnit()
     {
-        if (GameManager.main.isGameOver) return;
+        if (GameManager.main.isGameOver || spawnQueue.Count == 0) return;
 
         ITargetable nextUnit = spawnQueue.Peek().GetComponent<ITargetable>();
 
@@ -59,7 +59,7 @@ public class EnemyAI : MonoBehaviour
             if(spawningSucess)
             {
                 spawnQueue.Dequeue();
-                spawnQueue.Enqueue(nextUnit.GetGameObject());
+                //spawnQueue.Enqueue(nextUnit.GetGameObject());
             }
         }
     }

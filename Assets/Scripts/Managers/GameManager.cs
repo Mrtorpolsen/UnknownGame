@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
 
         currency = new Dictionary<Team, float>()
         {
+            { Team.North, 1000 },
             { Team.South, 300 },
         };
 

@@ -66,12 +66,10 @@ public class TowerStats : UnitStats, IUnit
 
     public void Shoot(ITargetable target)
     {
-        Debug.Log("Shooting");
         GameObject towerProjectileObj = Instantiate(towerProjectilePrefab, unit.transform.position, Quaternion.identity);
         TowerProjectile towerProjectileScript = towerProjectileObj.GetComponent<TowerProjectile>();
         towerProjectileObj.layer = target.GetTeam() == Team.North ? LayerMask.NameToLayer("SouthTeamProjectile") : LayerMask.NameToLayer("NorthTeamProjectile");
         towerProjectileScript.SetTarget(target);
-
         towerProjectileScript.Init(this, attackDamage);
         towerProjectileScript.OnHit += HandleArrowHit;
     }
