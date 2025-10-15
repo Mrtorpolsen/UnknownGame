@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameUI : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private TMP_Text text;

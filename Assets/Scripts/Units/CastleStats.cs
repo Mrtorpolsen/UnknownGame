@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CastleStats : MonoBehaviour, IUnit
+public class CastleStats : MonoBehaviour, IUnit, ITargetable
 {
     [Header("Reference")]
     [SerializeField] public GameObject castle;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GateStats : UnitStats, IUnit
+public class GateStats : UnitStats, IUnit, ITargetable
 {
     [Header("Reference")]
     [SerializeField] public GameObject gate;

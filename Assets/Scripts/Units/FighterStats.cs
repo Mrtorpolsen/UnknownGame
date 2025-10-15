@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FighterStats : UnitStats, IUnit
+public class FighterStats : UnitStats, IUnit, ITargetable
 {
     [Header("Reference")]
     [SerializeField] private GameObject unit;

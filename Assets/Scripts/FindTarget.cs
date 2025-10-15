@@ -10,15 +10,15 @@ public class FindTarget : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private GameObject debugTarget;
 
-    private ITargetable selfUnit;
+    private IUnit selfUnit;
 
     private void Awake()
     {
-        selfUnit = GetComponent<ITargetable>();
+        selfUnit = GetComponent<IUnit>();
 
-        currentTarget = GetEnemyCastle(selfUnit);
+        currentTarget = GetEnemyCastle(selfUnit.GetTeam());
     }
-    // Update is called once per frame
+    
     void Update()
     {
 
@@ -55,8 +55,10 @@ public class FindTarget : MonoBehaviour
         }
         currentTarget = nearestEnemy;
     }
-    private ITargetable GetEnemyCastle(ITargetable selfUnit)
+    private ITargetable GetEnemyCastle(Team selfTeam)
     {
+        if (selfUnit == null) return GameManager.main.north.GetComponent<ITargetable>();
+
         return currentTarget = (selfUnit.GetTeam() == Team.North)
            ? GameManager.main.south.GetComponent<ITargetable>()
            : GameManager.main.north.GetComponent<ITargetable>();

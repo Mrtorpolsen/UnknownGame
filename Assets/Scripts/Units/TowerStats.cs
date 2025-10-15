@@ -1,21 +1,18 @@
 using UnityEngine;
 
-public class RangerStats : UnitStats, IUnit, ITargetable
+public class TowerStats : UnitStats, IUnit
 {
     [Header("Reference")]
     [SerializeField] private GameObject unit;
-    [SerializeField] FloatingHealthBar healthBar;
-    [SerializeField] private GameObject arrowPrefab;
+    [SerializeField] private GameObject towerProjectilePrefab;
 
     [Header("Attributes")]
     [SerializeField] private float cost = 75;
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private int attackDamage = 15;
     [SerializeField] private int currentHealth;
-    [SerializeField] private float attackRange = 1.5f;
+    [SerializeField] private float attackRange = 3.5f;
     [SerializeField] private float attackSpeed = 0.5f;
-    [SerializeField] private float hitRadius = 0.135f;
-    [SerializeField] private float movementSpeed = 1.75f;
 
 
     private Combat combat;
@@ -28,8 +25,8 @@ public class RangerStats : UnitStats, IUnit, ITargetable
     public int GetAttackDamage() => attackDamage;
     public float GetAttackSpeed() => attackSpeed;
     public bool GetIsAlive() => currentHealth > 0;
-    public float GetHitRadius() => hitRadius;
-    public float GetMovementSpeed() => movementSpeed;
+    public float GetHitRadius() => 0f;
+    public float GetMovementSpeed() => 0f;
 
 
     public Transform GetTransform()
@@ -40,18 +37,16 @@ public class RangerStats : UnitStats, IUnit, ITargetable
     void Start()
     {
         if (unit == null) return;
-        healthBar.UpdateHealthBar(currentHealth, maxHealth);
     }
     void Awake()
     {
         currentHealth = maxHealth;
-        healthBar = GetComponentInChildren<FloatingHealthBar>();
         combat = GetComponent<Combat>();
     }
+
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
-        healthBar.UpdateHealthBar(currentHealth, maxHealth);
         if (currentHealth <= 0)
         {
             Die();
@@ -71,13 +66,14 @@ public class RangerStats : UnitStats, IUnit, ITargetable
 
     public void Shoot(ITargetable target)
     {
-        GameObject arrowObj = Instantiate(arrowPrefab, unit.transform.position, Quaternion.identity);
-        Arrow arrowScript = arrowObj.GetComponent<Arrow>();
-        arrowObj.layer = target.GetTeam() == Team.North ? LayerMask.NameToLayer("SouthTeamProjectile") : LayerMask.NameToLayer("NorthTeamProjectile");
-        arrowScript.SetTarget(target);
+        Debug.Log("Shooting");
+        GameObject towerProjectileObj = Instantiate(towerProjectilePrefab, unit.transform.position, Quaternion.identity);
+        TowerProjectile towerProjectileScript = towerProjectileObj.GetComponent<TowerProjectile>();
+        towerProjectileObj.layer = target.GetTeam() == Team.North ? LayerMask.NameToLayer("SouthTeamProjectile") : LayerMask.NameToLayer("NorthTeamProjectile");
+        towerProjectileScript.SetTarget(target);
 
-        arrowScript.Init(this, attackDamage);
-        arrowScript.OnHit += HandleArrowHit;
+        towerProjectileScript.Init(this, attackDamage);
+        towerProjectileScript.OnHit += HandleArrowHit;
     }
 
     private void HandleArrowHit(ITargetable target, int damage)

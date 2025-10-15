@@ -48,9 +48,16 @@ public class Combat : MonoBehaviour
 
                     if (dist <= effectiveRange && attackCooldown <= 0)
                     {
-                        if (unit is RangerStats) 
+                        if (unit is RangerStats || unit is TowerStats) 
                         {
-                            (unit as RangerStats).Shoot(target);
+                            if(unit is RangerStats)
+                            {
+                                (unit as RangerStats).Shoot(target);
+                            }
+                            if(unit is TowerStats)
+                            {
+                                (unit as TowerStats).Shoot(target);
+                            }
                         } else
                         {
                             target.TakeDamage(unit.GetAttackDamage());

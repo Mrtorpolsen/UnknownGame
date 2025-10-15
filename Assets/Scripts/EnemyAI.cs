@@ -9,7 +9,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private GameObject rangerPrefab;
     [SerializeField] private GameObject cavalierPrefab;
     [SerializeField] private GameObject gatePrefab;
-    [SerializeField] private UnitSpawner unitSpawner;
+    [SerializeField] private UnitManager unitManager;
 
     private Queue<GameObject> spawnQueue;
 
@@ -18,9 +18,9 @@ public class EnemyAI : MonoBehaviour
         spawnQueue = new Queue<GameObject>(new[]
         {
             fighterPrefab,
-            rangerPrefab,
-            cavalierPrefab,
-            fighterPrefab
+            //rangerPrefab,
+            //cavalierPrefab,
+            //fighterPrefab
         });
     }
 
@@ -36,20 +36,20 @@ public class EnemyAI : MonoBehaviour
     {
         if (GameManager.main.isGameOver) return;
 
-        IUnit nextUnit = spawnQueue.Peek().GetComponent<IUnit>();
+        ITargetable nextUnit = spawnQueue.Peek().GetComponent<ITargetable>();
 
         Func<bool> spawnUnit = null;
 
         switch(nextUnit)
         {
             case FighterStats:
-                spawnUnit = unitSpawner.SpawnNorthFighter;
+                spawnUnit = UnitManager.main.SpawnNorthFighter;
                 break;
             case RangerStats:
-                spawnUnit = unitSpawner.SpawnNorthRanger;
+                spawnUnit = UnitManager.main.SpawnNorthRanger;
                 break;
             case CavalierStats:
-                spawnUnit = unitSpawner.SpawnNorthCavalier;
+                spawnUnit = UnitManager.main.SpawnNorthCavalier;
                 break;
         }
 
