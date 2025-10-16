@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class MovementManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
@@ -10,7 +10,6 @@ public class EnemyMovement : MonoBehaviour
 
     private FindTarget findTarget;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         findTarget = GetComponent<FindTarget>();

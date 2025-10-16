@@ -10,14 +10,14 @@ public class Combat : MonoBehaviour
 
     private IUnit unit;
     private ITargetable target;
-    private EnemyMovement movement;
+    private MovementManager movement;
     private float attackCooldown;
 
     private void Awake()
     {
         unit = GetComponent<IUnit>();
         findTarget = GetComponent<FindTarget>();
-        movement = GetComponent<EnemyMovement>();
+        movement = GetComponent<MovementManager>();
     }
 
     private void Update()
