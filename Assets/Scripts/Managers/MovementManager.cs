@@ -15,7 +15,7 @@ public class MovementManager : MonoBehaviour
         findTarget = GetComponent<FindTarget>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
-
+    
     private void FixedUpdate()
     {
         if (!canMove)
@@ -33,12 +33,22 @@ public class MovementManager : MonoBehaviour
         if (target != null)
         {
             Transform t = target.GetTransform();
+
             if (t != null)
             {
                 Vector2 direction = (target.GetTransform().position - transform.position).normalized;
                 rb.linearVelocity = direction * rb.GetComponent<IUnit>().GetMovementSpeed();
             }
+
+            //Sets Y barrier
+            if (rb.GetComponent<UnitStats>().Team == Team.South)
+            {
+                Vector2 pos = rb.position;
+                pos.y = Mathf.Min(pos.y, GameManager.main.playerUnitBoundary.transform.position.y);
+                rb.position = pos;
+            }
         }
+
         SeperationForce();
     }
     

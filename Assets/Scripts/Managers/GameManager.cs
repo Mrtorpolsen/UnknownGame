@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public Transform north;
     public Transform south;
 
+    public GameObject playerUnitBoundary;
+
     public Dictionary<Team, float> currency;
 
     [Header("References")]
@@ -40,6 +42,7 @@ public class GameManager : MonoBehaviour
         };
 
         UpdateCurrencyText();
+        playerUnitBoundary = GameObject.FindGameObjectWithTag("PlayerUnitBarrier");
     }
 
     void Update()

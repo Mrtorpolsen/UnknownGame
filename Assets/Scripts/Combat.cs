@@ -19,7 +19,7 @@ public class Combat : MonoBehaviour
         findTarget = GetComponent<FindTarget>();
         movement = GetComponent<MovementManager>();
     }
-
+    //look into only looking for targets in the player zone
     private void Update()
     {
         if (attackCooldown > 0) 
