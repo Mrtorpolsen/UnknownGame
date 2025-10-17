@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour
             GameManager.main.gameUI.gameObject.SetActive(false);
             GameManager.main.isGameRunning = true;
             TimerManager.main.StartTimer();
+            WaveManager.main.StartWaves();
         }
         else
         {
