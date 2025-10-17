@@ -7,11 +7,11 @@ public class TowerStats : UnitStats, IUnit
     [SerializeField] private GameObject towerProjectilePrefab;
 
     [Header("Attributes")]
-    [SerializeField] private float cost = 75;
+    [SerializeField] private float cost = 250;
     [SerializeField] private int maxHealth = 100;
     [SerializeField] private int currentHealth;
-    [SerializeField] private int attackDamage = 15;
-    [SerializeField] private float attackSpeed = 0.5f;
+    [SerializeField] private int attackDamage = 30;
+    [SerializeField] private float attackSpeed = 1.5f;
     [SerializeField] private float attackRange = 3.5f;
 
 

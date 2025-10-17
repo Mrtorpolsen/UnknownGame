@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] float currencyTimer = 0f;
     [SerializeField] float currencyInterval = 1f;
     [SerializeField] float incomePerTick = 20;
+    [SerializeField] float baseIncomePerTick = 20;
     [SerializeField] float incomeModifier = 1;
     [SerializeField] public float incomeUpgradeCost = 200;
     [SerializeField] public bool isGameOver = false;
@@ -78,7 +79,7 @@ public class GameManager : MonoBehaviour
     public void UpgradeIncomeModifier()
     {
         incomeModifier = (float)(incomeModifier + 0.2);
-        incomePerTick = incomePerTick * incomeModifier;
+        incomePerTick = baseIncomePerTick * incomeModifier;
         southIncomeModifierText.text = "x" + incomeModifier.ToString();
     }
     public void SetGameOver(bool gameOver, Team team)
