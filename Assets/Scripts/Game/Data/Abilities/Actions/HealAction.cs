@@ -10,7 +10,7 @@ public class HealAction : AbilityAction
 
     public override void Execute(AbilityContext context)
     {
-        if (!AbilityCooldownManager.Instance.CanUse(abilityDefinition))
+        if (!AbilityCooldownManager.Instance.CanUse(abilityDefinition, context.Caster))
             return;
 
         var targets = targeting.Resolve(context.TargetRegistry);

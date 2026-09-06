@@ -20,25 +20,47 @@ public class AbilityCooldownManager : MonoBehaviour
         Instance = this;
     }
 
-    public bool CanUse(AbilityDefinition ability)
+    public bool CanUse(AbilityDefinition ability, BaseUnitStats caster = null)
     {
-        if (!lastUseTime.TryGetValue(ability.DisplayName, out float last))
+        string key = GetCooldownKey(ability, caster);
+
+        if (!lastUseTime.TryGetValue(key, out float last))
             return true;
 
         return Time.time >= last + ability.cooldown;
     }
 
-    public float GetRemainingCooldown(string abilityName, float cooldown)
+    public float GetRemainingCooldown(AbilityDefinition ability, BaseUnitStats caster = null)
     {
-        if (!lastUseTime.TryGetValue(abilityName, out float last))
+        string key = GetCooldownKey(ability, caster);
+
+        if (!lastUseTime.TryGetValue(key, out float last))
+            return 0;
+
+        return Mathf.Max(0, last + ability.cooldown - Time.time);
+    }
+
+    public float GetRemainingCooldown(string coolDownKey, float cooldown)
+    {
+        if (!lastUseTime.TryGetValue(coolDownKey, out float last))
             return 0;
 
         return Mathf.Max(0, last + cooldown - Time.time);
     }
 
-    public void TriggerCooldown(string abilityName)
+    public void TriggerCooldown(AbilityDefinition ability, BaseUnitStats caster = null)
     {
-        lastUseTime[abilityName] = Time.time;
-        OnCooldownTriggered?.Invoke(abilityName);
+        string key = GetCooldownKey(ability, caster);
+
+        lastUseTime[key] = Time.time;
+        OnCooldownTriggered?.Invoke(key);
+    }
+
+    public string GetCooldownKey(AbilityDefinition ability, BaseUnitStats caster = null)
+    {
+        if (caster == null)
+            return ability.Id;
+
+        return $"{ability.Id}_{caster.GetInstanceID()}";
     }
 }

@@ -229,7 +229,7 @@ public class UIManager : MonoBehaviour
                 continue;
             }
 
-            abilityButtons[i].Setup(def.DisplayName, def.Cost, def.Icon, def.cooldown, (() => !PauseManager.IsPaused && GameManager.Instance.currency[Team.South] >= def.Cost && AbilityCooldownManager.Instance.CanUse(def)));
+            abilityButtons[i].Setup(def, (() => !PauseManager.IsPaused && GameManager.Instance.currency[Team.South] >= def.Cost && AbilityCooldownManager.Instance.CanUse(def)));
             abilityButtons[i].SetClickAction(() =>
             {
                 if (GameManager.Instance.currency[Team.South] < def.Cost && AbilityCooldownManager.Instance.CanUse(def))
@@ -242,7 +242,7 @@ public class UIManager : MonoBehaviour
                     action.Execute(new AbilityContext(TargetRegistry.Instance));
                 }
 
-                AbilityCooldownManager.Instance.TriggerCooldown(def.DisplayName);
+                AbilityCooldownManager.Instance.TriggerCooldown(def);
             });
 
             boundButtons.Add(abilityButtons[i]);
