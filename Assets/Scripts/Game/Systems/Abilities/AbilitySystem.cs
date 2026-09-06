@@ -16,5 +16,26 @@ public class AbilitySystem : MonoBehaviour
         Instance = this;
     }
 
-    
+    public bool TryExecute(
+        AbilityDefinition ability,
+        AbilityContext context)
+    {
+        if (!AbilityCooldownManager.Instance.CanUse(
+                ability,
+                context.Caster))
+        {
+            return false;
+        }
+
+        foreach (var action in ability.actions)
+        {
+            action.Execute(context);
+        }
+
+        AbilityCooldownManager.Instance.TriggerCooldown(
+            ability,
+            context.Caster);
+
+        return true;
+    }
 }

@@ -10,6 +10,12 @@ public class StatModificationAction : AbilityAction
 
     public override void Execute(AbilityContext context)
     {
+        if (AbilityCooldownManager.Instance == null)
+        {
+            Debug.LogError($"AbilityCooldownManager instance is null. \n Name: {context.Caster.name}  \n {abilityDefinition.name}");
+            return;
+        }
+
         if (!AbilityCooldownManager.Instance.CanUse(abilityDefinition))
             return;
 

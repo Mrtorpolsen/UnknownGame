@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(menuName = "Game/Ability Actions/Heal")]
 public class HealAction : AbilityAction
@@ -10,6 +8,12 @@ public class HealAction : AbilityAction
 
     public override void Execute(AbilityContext context)
     {
+        if(AbilityCooldownManager.Instance == null)
+        {
+            Debug.LogError($"AbilityCooldownManager instance is null. \n Name: {context.Caster.name}  \n {abilityDefinition.name}");
+            return;
+        }
+
         if (!AbilityCooldownManager.Instance.CanUse(abilityDefinition, context.Caster))
             return;
 

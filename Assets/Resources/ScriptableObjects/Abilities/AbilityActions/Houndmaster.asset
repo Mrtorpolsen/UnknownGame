@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abaf70760b44a8e4a994e9d9713e2d46, type: 3}
-  m_Name: HoundmasterSummon
-  m_EditorClassIdentifier: Assembly-CSharp::IntervalTriggerDefinition
-  interval: 90
+  m_Script: {fileID: 11500000, guid: 41279dd442b5aac49b01712db082266f, type: 3}
+  m_Name: Houndmaster
+  m_EditorClassIdentifier: Assembly-CSharp::SummonAction
+  targeting: {fileID: 0}
+  abilityDefinition: {fileID: 0}
+  summonPrefab: {fileID: 0}
