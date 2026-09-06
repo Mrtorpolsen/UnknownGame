@@ -8,12 +8,12 @@ public class StatModificationAction : AbilityAction
     public float value;
     public float duration; // Duration in seconds, 0 permanent
 
-    public override void Execute(TargetRegistry registry)
+    public override void Execute(AbilityContext context)
     {
         if (!AbilityCooldownManager.Instance.CanUse(abilityDefinition))
             return;
 
-        var targets = targeting.Resolve(registry);
+        var targets = targeting.Resolve(context.TargetRegistry);
 
         foreach (BaseUnitStats target in targets)
         {

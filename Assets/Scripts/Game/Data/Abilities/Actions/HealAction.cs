@@ -8,12 +8,12 @@ public class HealAction : AbilityAction
     public ModifierType type;
     public float valueToHeal;
 
-    public override void Execute(TargetRegistry registry)
+    public override void Execute(AbilityContext context)
     {
         if (!AbilityCooldownManager.Instance.CanUse(abilityDefinition))
             return;
 
-        var targets = targeting.Resolve(registry);
+        var targets = targeting.Resolve(context.TargetRegistry);
 
         foreach (BaseUnitStats target in targets)
         {

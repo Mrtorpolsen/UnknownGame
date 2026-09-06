@@ -239,7 +239,7 @@ public class UIManager : MonoBehaviour
 
                 foreach (var action in def.actions)
                 {
-                    action.Execute(TargetRegistry.Instance);
+                    action.Execute(new AbilityContext(TargetRegistry.Instance));
                 }
 
                 AbilityCooldownManager.Instance.TriggerCooldown(def.DisplayName);

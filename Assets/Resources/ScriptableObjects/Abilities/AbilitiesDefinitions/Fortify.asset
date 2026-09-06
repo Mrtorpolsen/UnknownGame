@@ -21,7 +21,7 @@ MonoBehaviour:
     m_EditorAssetChanged: 0
   id: ability_fortify
   unlockId: global_abilityunlock_fortify
-  unlockedByDefault: 0
+  unlockedByDefault: 1
   slotType: 2
   cost: 0
   actions:
