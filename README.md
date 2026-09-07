@@ -1,0 +1,1 @@
+Emberfall is a 2D tower defense game built in Unity with C#. The project focuses on strategic unit deployment, abilities, progression, and increasingly challenging enemy waves, while being developed with a focus on scalable systems, data-driven design, and clean architecture.
