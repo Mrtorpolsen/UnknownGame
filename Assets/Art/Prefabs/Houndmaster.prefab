@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4453514862014735567}
   - component: {fileID: 2704402071478294264}
   - component: {fileID: 2657259545770251519}
+  - component: {fileID: -8600937096272662933}
   - component: {fileID: 7395895419431930182}
   - component: {fileID: 4235267402526415989}
   - component: {fileID: 6109290109553419057}
@@ -166,8 +167,6 @@ MonoBehaviour:
   statsDef: {fileID: 11400000, guid: c69c17170bb08f94281b742fb0f93529, type: 2}
   unitCollider: {fileID: 5301206489407447251}
   unitRigidbody: {fileID: 4453514862014735567}
-  minorAbility: {fileID: 11400000, guid: b5d4760e28d2f5941a93305ec779434a, type: 2}
-  majorAbility: {fileID: 0}
   showRangeGizmo: 0
   currentHealth: 0
   healthBarScale: {x: 0, y: 0, z: 0}
@@ -186,6 +185,27 @@ MonoBehaviour:
   debugCritDamage: 0
   debugUnitPrio: 0
   debugIsTargetable: 0
+--- !u!114 &-8600937096272662933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3501163535796704365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e5994e74250d4942a3e3ad1ee1d197f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitAbilityComponent
+  unitStats: {fileID: 2657259545770251519}
+  minorAbility:
+    ability: {fileID: 11400000, guid: b5d4760e28d2f5941a93305ec779434a, type: 2}
+    triggerType: 0
+    canUse: 0
+  majorAbility:
+    ability: {fileID: 0}
+    triggerType: 0
+    canUse: 0
 --- !u!114 &7395895419431930182
 MonoBehaviour:
   m_ObjectHideFlags: 0

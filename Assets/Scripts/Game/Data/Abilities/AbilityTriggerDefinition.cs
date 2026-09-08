@@ -2,5 +2,5 @@
 
 public abstract class AbilityTriggerDefinition : ScriptableObject
 {
-    public abstract AbilityTrigger Create(BaseUnitStats owner);
+    public abstract AbilityTrigger Create(BaseUnitStats owner, AbilityDefinition abilityDefinition);
 }

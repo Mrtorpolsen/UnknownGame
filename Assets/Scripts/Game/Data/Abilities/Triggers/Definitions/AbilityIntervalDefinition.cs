@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(menuName = "Game/Ability Triggers/Interval")]
-public class IntervalTriggerDefinition : AbilityTriggerDefinition
+[CreateAssetMenu(menuName = "Game/Ability Triggers/Cooldown")]
+public class CooldownTriggerDefinition : AbilityTriggerDefinition
 {
-    [SerializeField] private float interval;
-
-    public override AbilityTrigger Create(BaseUnitStats owner)
+    public override AbilityTrigger Create(BaseUnitStats owner, AbilityDefinition abilityDefinition)
     {
-        return new IntervalAbilityTrigger(owner, interval);
+        return new OnCooldownAbilityTrigger(owner, abilityDefinition);
     }
 }

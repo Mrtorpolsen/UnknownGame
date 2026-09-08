@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Houndmaster
   m_EditorClassIdentifier: Assembly-CSharp::SummonAction
   targeting: {fileID: 0}
-  abilityDefinition: {fileID: 0}
-  summonPrefab: {fileID: 0}
+  abilityDefinition: {fileID: 11400000, guid: b5d4760e28d2f5941a93305ec779434a, type: 2}
+  summonPrefab: {fileID: 6717628542700303866, guid: 1bb3908346e2e2848ae172c5d4009c28, type: 3}

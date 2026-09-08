@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//What is supposed to happen when the unit uses the ability.
 public class AbilitySystem : MonoBehaviour
 {
     public static AbilitySystem Instance { get; private set; }

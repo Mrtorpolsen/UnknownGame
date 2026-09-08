@@ -9,8 +9,6 @@ public abstract class BaseUnitStats : MonoBehaviour, IUnit, ITargetable
     [SerializeField] public UnitStatsDefinition statsDef;
     [SerializeField] private Collider2D unitCollider;
     [SerializeField] private Rigidbody2D unitRigidbody;
-    [SerializeField] private AbilityDefinition minorAbility;
-    [SerializeField] private AbilityDefinition majorAbility;
 
     [SerializeField] private float showRangeGizmo = 0f;
 

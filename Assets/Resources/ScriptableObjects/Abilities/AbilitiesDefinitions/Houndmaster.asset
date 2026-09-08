@@ -19,11 +19,11 @@ MonoBehaviour:
     m_SubObjectType: 
     m_SubObjectGUID: 
     m_EditorAssetChanged: 0
-  id: 
-  unlockId: 
+  id: ability_minor_houndmaster
+  unlockId: unit_minor_abilityunlock_houndmaster
   unlockedByDefault: 0
   slotType: 0
   cost: 0
   actions:
-  - {fileID: 0}
-  cooldown: 0
+  - {fileID: 11400000, guid: e96a8b3d920204748803060003f9004c, type: 2}
+  cooldown: 90

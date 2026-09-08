@@ -18,7 +18,6 @@ public class ActionButton : MonoBehaviour
 
     private AsyncOperationHandle<Sprite>? iconHandle;
 
-    private float cooldown;
     private string cooldownKey;
     private Coroutine cooldownRoutine;
 
@@ -63,7 +62,6 @@ public class ActionButton : MonoBehaviour
 
             if (ability.cooldown > 0)
             {
-                this.cooldown = ability.cooldown;
                 AbilityCooldownManager.Instance.OnCooldownTriggered += StartCooldown;
             }
         }
@@ -148,7 +146,7 @@ public class ActionButton : MonoBehaviour
     {
         while (true)
         {
-            float remaining = AbilityCooldownManager.Instance.GetRemainingCooldown(cooldownKey, cooldown);
+            float remaining = AbilityCooldownManager.Instance.GetRemainingCooldown(cooldownKey);
             if (remaining <= 0)
             {
                 Refresh();
