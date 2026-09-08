@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41279dd442b5aac49b01712db082266f, type: 3}
+  m_Name: Houndmaster
+  m_EditorClassIdentifier: Assembly-CSharp::SummonAction
+  targeting: {fileID: 0}
+  abilityDefinition: {fileID: 11400000, guid: b5d4760e28d2f5941a93305ec779434a, type: 2}
+  summonPrefab: {fileID: 6717628542700303866, guid: 1bb3908346e2e2848ae172c5d4009c28, type: 3}

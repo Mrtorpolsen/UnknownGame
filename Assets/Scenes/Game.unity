@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 13339232}
   - component: {fileID: 13339231}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -883,9 +883,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 48922693}
-  costText: {fileID: 1301741800}
+  topText: {fileID: 1301741800}
   iconImage: {fileID: 1955021813}
-  unitText: {fileID: 90459036}
+  bottomText: {fileID: 90459036}
   cooldownText: {fileID: 0}
 --- !u!222 &48922696
 CanvasRenderer:
@@ -1087,9 +1087,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 58003943}
-  costText: {fileID: 1576992562}
+  topText: {fileID: 1576992562}
   iconImage: {fileID: 369739108}
-  unitText: {fileID: 574045729}
+  bottomText: {fileID: 574045729}
   cooldownText: {fileID: 0}
 --- !u!1001 &60159208
 PrefabInstance:
@@ -1169,7 +1169,7 @@ GameObject:
   - component: {fileID: 90459037}
   - component: {fileID: 90459036}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1478,9 +1478,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 101370951}
-  costText: {fileID: 1186231891}
+  topText: {fileID: 1186231891}
   iconImage: {fileID: 464016422}
-  unitText: {fileID: 1094465659}
+  bottomText: {fileID: 1094465659}
   cooldownText: {fileID: 0}
 --- !u!222 &101370954
 CanvasRenderer:
@@ -1502,7 +1502,7 @@ GameObject:
   - component: {fileID: 113151920}
   - component: {fileID: 113151919}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1988,9 +1988,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 184286873}
-  costText: {fileID: 1473805671}
+  topText: {fileID: 1473805671}
   iconImage: {fileID: 481361192}
-  unitText: {fileID: 1580733463}
+  bottomText: {fileID: 1580733463}
   cooldownText: {fileID: 0}
 --- !u!222 &184286876
 CanvasRenderer:
@@ -2694,7 +2694,7 @@ GameObject:
   - component: {fileID: 282546723}
   - component: {fileID: 282546722}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2869,7 +2869,7 @@ GameObject:
   - component: {fileID: 292421310}
   - component: {fileID: 292421309}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3340,9 +3340,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 318607529}
-  costText: {fileID: 353384287}
+  topText: {fileID: 353384287}
   iconImage: {fileID: 1257504098}
-  unitText: {fileID: 1190686899}
+  bottomText: {fileID: 1190686899}
   cooldownText: {fileID: 0}
 --- !u!1 &320070284
 GameObject:
@@ -3844,9 +3844,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 340948745}
-  costText: {fileID: 1606426526}
+  topText: {fileID: 1606426526}
   iconImage: {fileID: 320070286}
-  unitText: {fileID: 1171453269}
+  bottomText: {fileID: 1171453269}
   cooldownText: {fileID: 0}
 --- !u!1 &353384285
 GameObject:
@@ -3860,7 +3860,7 @@ GameObject:
   - component: {fileID: 353384288}
   - component: {fileID: 353384287}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4127,7 +4127,7 @@ GameObject:
   - component: {fileID: 386205622}
   - component: {fileID: 386205621}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4576,7 +4576,7 @@ GameObject:
   - component: {fileID: 413732951}
   - component: {fileID: 413732950}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4951,9 +4951,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 424892270}
-  costText: {fileID: 292421309}
+  topText: {fileID: 292421309}
   iconImage: {fileID: 474594930}
-  unitText: {fileID: 888059607}
+  bottomText: {fileID: 888059607}
   cooldownText: {fileID: 0}
 --- !u!222 &424892273
 CanvasRenderer:
@@ -6428,9 +6428,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 537376982}
-  costText: {fileID: 1485440058}
+  topText: {fileID: 0}
   iconImage: {fileID: 0}
-  unitText: {fileID: 0}
+  bottomText: {fileID: 0}
   cooldownText: {fileID: 0}
 --- !u!222 &537376985
 CanvasRenderer:
@@ -6452,7 +6452,7 @@ GameObject:
   - component: {fileID: 538623587}
   - component: {fileID: 538623586}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6726,6 +6726,50 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 5, y: 5}
   m_UseGraphicAlpha: 1
+--- !u!1 &554183979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 554183980}
+  - component: {fileID: 554183981}
+  m_Layer: 0
+  m_Name: Ability System
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &554183980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554183979}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 978201588}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &554183981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554183979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92cf27481568294da6bb51f3aa9173b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AbilitySystem
 --- !u!1 &556354267
 GameObject:
   m_ObjectHideFlags: 0
@@ -7065,7 +7109,7 @@ GameObject:
   - component: {fileID: 569555363}
   - component: {fileID: 569555362}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7246,7 +7290,7 @@ GameObject:
   - component: {fileID: 573371663}
   - component: {fileID: 573371662}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7383,7 +7427,7 @@ GameObject:
   - component: {fileID: 574045730}
   - component: {fileID: 574045729}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8258,9 +8302,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 629382411}
-  costText: {fileID: 282546722}
+  topText: {fileID: 282546722}
   iconImage: {fileID: 753170924}
-  unitText: {fileID: 1083400360}
+  bottomText: {fileID: 1083400360}
   cooldownText: {fileID: 778572800}
 --- !u!1 &636822301
 GameObject:
@@ -8710,9 +8754,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 678451146}
-  costText: {fileID: 1450609943}
+  topText: {fileID: 1450609943}
   iconImage: {fileID: 1120461008}
-  unitText: {fileID: 386205621}
+  bottomText: {fileID: 386205621}
   cooldownText: {fileID: 0}
 --- !u!1 &678475981
 GameObject:
@@ -9621,7 +9665,7 @@ GameObject:
   - component: {fileID: 808673906}
   - component: {fileID: 808673905}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9758,7 +9802,7 @@ GameObject:
   - component: {fileID: 810665745}
   - component: {fileID: 810665744}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10233,9 +10277,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 825489001}
-  costText: {fileID: 535774602}
+  topText: {fileID: 0}
   iconImage: {fileID: 0}
-  unitText: {fileID: 0}
+  bottomText: {fileID: 0}
   cooldownText: {fileID: 0}
 --- !u!222 &825489004
 CanvasRenderer:
@@ -10429,9 +10473,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 829410226}
-  costText: {fileID: 1246653667}
+  topText: {fileID: 1246653667}
   iconImage: {fileID: 1921016417}
-  unitText: {fileID: 569555362}
+  bottomText: {fileID: 569555362}
   cooldownText: {fileID: 0}
 --- !u!222 &829410229
 CanvasRenderer:
@@ -10897,9 +10941,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 866684463}
-  costText: {fileID: 495375138}
+  topText: {fileID: 0}
   iconImage: {fileID: 0}
-  unitText: {fileID: 0}
+  bottomText: {fileID: 0}
   cooldownText: {fileID: 0}
 --- !u!222 &866684466
 CanvasRenderer:
@@ -10987,7 +11031,7 @@ GameObject:
   - component: {fileID: 888059608}
   - component: {fileID: 888059607}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11124,7 +11168,7 @@ GameObject:
   - component: {fileID: 895102827}
   - component: {fileID: 895102826}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11261,7 +11305,7 @@ GameObject:
   - component: {fileID: 897203794}
   - component: {fileID: 897203793}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11566,7 +11610,7 @@ GameObject:
   - component: {fileID: 919881346}
   - component: {fileID: 919881345}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46628,6 +46672,7 @@ Transform:
   - {fileID: 1263956707}
   - {fileID: 573254239}
   - {fileID: 1980298214}
+  - {fileID: 554183980}
   - {fileID: 799955114}
   - {fileID: 2032074191}
   - {fileID: 1564387458}
@@ -46931,7 +46976,7 @@ GameObject:
   - component: {fileID: 1007305705}
   - component: {fileID: 1007305704}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47220,9 +47265,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 1010833914}
-  costText: {fileID: 1007305704}
+  topText: {fileID: 1007305704}
   iconImage: {fileID: 713496488}
-  unitText: {fileID: 1456040875}
+  bottomText: {fileID: 1456040875}
   cooldownText: {fileID: 1746843669}
 --- !u!1 &1016937685
 GameObject:
@@ -47456,7 +47501,7 @@ GameObject:
   - component: {fileID: 1071185932}
   - component: {fileID: 1071185931}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47593,7 +47638,7 @@ GameObject:
   - component: {fileID: 1083400361}
   - component: {fileID: 1083400360}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47985,9 +48030,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 1093630474}
-  costText: {fileID: 1786680485}
+  topText: {fileID: 1786680485}
   iconImage: {fileID: 1087628536}
-  unitText: {fileID: 413732950}
+  bottomText: {fileID: 413732950}
   cooldownText: {fileID: 0}
 --- !u!1 &1094465657
 GameObject:
@@ -48001,7 +48046,7 @@ GameObject:
   - component: {fileID: 1094465660}
   - component: {fileID: 1094465659}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48138,7 +48183,7 @@ GameObject:
   - component: {fileID: 1101932725}
   - component: {fileID: 1101932724}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48511,9 +48556,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 1109114338}
-  costText: {fileID: 1247736343}
+  topText: {fileID: 1247736343}
   iconImage: {fileID: 451304928}
-  unitText: {fileID: 2131077779}
+  bottomText: {fileID: 2131077779}
   cooldownText: {fileID: 3818264}
 --- !u!222 &1109114341
 CanvasRenderer:
@@ -48718,7 +48763,7 @@ GameObject:
   - component: {fileID: 1171453270}
   - component: {fileID: 1171453269}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49068,9 +49113,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 1176793290}
-  costText: {fileID: 1893166944}
+  topText: {fileID: 1893166944}
   iconImage: {fileID: 1468399589}
-  unitText: {fileID: 1362242836}
+  bottomText: {fileID: 1362242836}
   cooldownText: {fileID: 0}
 --- !u!222 &1176793293
 CanvasRenderer:
@@ -49092,7 +49137,7 @@ GameObject:
   - component: {fileID: 1186231892}
   - component: {fileID: 1186231891}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49229,7 +49274,7 @@ GameObject:
   - component: {fileID: 1190686900}
   - component: {fileID: 1190686899}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49747,7 +49792,7 @@ GameObject:
   - component: {fileID: 1246653668}
   - component: {fileID: 1246653667}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49884,7 +49929,7 @@ GameObject:
   - component: {fileID: 1247736344}
   - component: {fileID: 1247736343}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50236,8 +50281,8 @@ MonoBehaviour:
   allGenerals:
   - {fileID: 11400000, guid: aab9a1372240a1046b71acc935d43880, type: 2}
   - {fileID: 11400000, guid: 011101fb57643d141b1782b2372e5012, type: 2}
-  isTest: 0
-  spawnOfEach: 100
+  isTest: 1
+  spawnOfEach: 0
 --- !u!4 &1263956707
 Transform:
   m_ObjectHideFlags: 0
@@ -50435,9 +50480,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 1267810364}
-  costText: {fileID: 395716051}
+  topText: {fileID: 0}
   iconImage: {fileID: 0}
-  unitText: {fileID: 0}
+  bottomText: {fileID: 0}
   cooldownText: {fileID: 0}
 --- !u!222 &1267810367
 CanvasRenderer:
@@ -50616,7 +50661,7 @@ GameObject:
   - component: {fileID: 1301741801}
   - component: {fileID: 1301741800}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51046,9 +51091,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 1319301828}
-  costText: {fileID: 1693937084}
+  topText: {fileID: 1693937084}
   iconImage: {fileID: 501410771}
-  unitText: {fileID: 808673905}
+  bottomText: {fileID: 808673905}
   cooldownText: {fileID: 1229521633}
 --- !u!1 &1328530261
 GameObject:
@@ -51232,9 +51277,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 1328530265}
-  costText: {fileID: 243188260}
+  topText: {fileID: 0}
   iconImage: {fileID: 0}
-  unitText: {fileID: 0}
+  bottomText: {fileID: 0}
   cooldownText: {fileID: 0}
 --- !u!222 &1328530268
 CanvasRenderer:
@@ -51292,7 +51337,7 @@ GameObject:
   - component: {fileID: 1340119144}
   - component: {fileID: 1340119143}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51601,9 +51646,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 1344129865}
-  costText: {fileID: 895102826}
+  topText: {fileID: 895102826}
   iconImage: {fileID: 2126254720}
-  unitText: {fileID: 113151919}
+  bottomText: {fileID: 113151919}
   cooldownText: {fileID: 0}
 --- !u!222 &1344129868
 CanvasRenderer:
@@ -51710,7 +51755,7 @@ GameObject:
   - component: {fileID: 1354368433}
   - component: {fileID: 1354368434}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51847,7 +51892,7 @@ GameObject:
   - component: {fileID: 1362242837}
   - component: {fileID: 1362242836}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52167,9 +52212,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 1369774401}
-  costText: {fileID: 2047898229}
+  topText: {fileID: 2047898229}
   iconImage: {fileID: 1943889202}
-  unitText: {fileID: 2042007312}
+  bottomText: {fileID: 2042007312}
   cooldownText: {fileID: 2044982910}
 --- !u!1 &1376410621
 GameObject:
@@ -52183,7 +52228,7 @@ GameObject:
   - component: {fileID: 1376410624}
   - component: {fileID: 1376410623}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52731,7 +52776,7 @@ GameObject:
   - component: {fileID: 1450609944}
   - component: {fileID: 1450609943}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52873,7 +52918,7 @@ GameObject:
   - component: {fileID: 1456040876}
   - component: {fileID: 1456040875}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53085,7 +53130,7 @@ GameObject:
   - component: {fileID: 1473805672}
   - component: {fileID: 1473805671}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53327,7 +53372,7 @@ GameObject:
   - component: {fileID: 1481249422}
   - component: {fileID: 1481249421}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53464,7 +53509,7 @@ GameObject:
   - component: {fileID: 1482188100}
   - component: {fileID: 1482188099}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54093,9 +54138,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 1523161693}
-  costText: {fileID: 810665744}
+  topText: {fileID: 810665744}
   iconImage: {fileID: 193412174}
-  unitText: {fileID: 1101932724}
+  bottomText: {fileID: 1101932724}
   cooldownText: {fileID: 821906588}
 --- !u!1 &1530075881
 GameObject:
@@ -54326,7 +54371,7 @@ GameObject:
   - component: {fileID: 1576992563}
   - component: {fileID: 1576992562}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54463,7 +54508,7 @@ GameObject:
   - component: {fileID: 1580733464}
   - component: {fileID: 1580733463}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54704,7 +54749,7 @@ GameObject:
   - component: {fileID: 1606426527}
   - component: {fileID: 1606426526}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54841,7 +54886,7 @@ GameObject:
   - component: {fileID: 1616367710}
   - component: {fileID: 1616367709}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55148,9 +55193,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 1644854866}
-  costText: {fileID: 403262571}
+  topText: {fileID: 0}
   iconImage: {fileID: 0}
-  unitText: {fileID: 0}
+  bottomText: {fileID: 0}
   cooldownText: {fileID: 0}
 --- !u!222 &1644854869
 CanvasRenderer:
@@ -55172,7 +55217,7 @@ GameObject:
   - component: {fileID: 1693937085}
   - component: {fileID: 1693937084}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55546,9 +55591,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 1713490672}
-  costText: {fileID: 1482188099}
+  topText: {fileID: 1482188099}
   iconImage: {fileID: 1016937687}
-  unitText: {fileID: 573371662}
+  bottomText: {fileID: 573371662}
   cooldownText: {fileID: 0}
 --- !u!222 &1713490675
 CanvasRenderer:
@@ -56071,7 +56116,7 @@ GameObject:
   - component: {fileID: 1786680486}
   - component: {fileID: 1786680485}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56231,9 +56276,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 1786751735}
-  costText: {fileID: 1354368434}
+  topText: {fileID: 1354368434}
   iconImage: {fileID: 1316965202}
-  unitText: {fileID: 1616367709}
+  bottomText: {fileID: 1616367709}
   cooldownText: {fileID: 0}
 --- !u!224 &1786751734
 RectTransform:
@@ -56887,7 +56932,7 @@ GameObject:
   - component: {fileID: 1884376770}
   - component: {fileID: 1884376769}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57024,7 +57069,7 @@ GameObject:
   - component: {fileID: 1893166945}
   - component: {fileID: 1893166944}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57744,9 +57789,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 1949094900}
-  costText: {fileID: 2001154679}
+  topText: {fileID: 2001154679}
   iconImage: {fileID: 153198030}
-  unitText: {fileID: 1481249421}
+  bottomText: {fileID: 1481249421}
   cooldownText: {fileID: 0}
 --- !u!222 &1949094903
 CanvasRenderer:
@@ -58080,9 +58125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 1975846768}
-  costText: {fileID: 1340119143}
+  topText: {fileID: 1340119143}
   iconImage: {fileID: 542814}
-  unitText: {fileID: 2131397532}
+  bottomText: {fileID: 2131397532}
   cooldownText: {fileID: 0}
 --- !u!222 &1975846771
 CanvasRenderer:
@@ -58437,9 +58482,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 1987044728}
-  costText: {fileID: 1376410623}
+  topText: {fileID: 1376410623}
   iconImage: {fileID: 24239692}
-  unitText: {fileID: 1071185931}
+  bottomText: {fileID: 1071185931}
   cooldownText: {fileID: 1429263631}
 --- !u!1 &2001154677
 GameObject:
@@ -58453,7 +58498,7 @@ GameObject:
   - component: {fileID: 2001154680}
   - component: {fileID: 2001154679}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58814,7 +58859,7 @@ GameObject:
   - component: {fileID: 2042007313}
   - component: {fileID: 2042007312}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59225,7 +59270,7 @@ GameObject:
   - component: {fileID: 2047898230}
   - component: {fileID: 2047898229}
   m_Layer: 5
-  m_Name: text_cost
+  m_Name: text_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59393,7 +59438,7 @@ GameObject:
   - component: {fileID: 2081870054}
   - component: {fileID: 2081870053}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60172,7 +60217,7 @@ GameObject:
   - component: {fileID: 2131077780}
   - component: {fileID: 2131077779}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60309,7 +60354,7 @@ GameObject:
   - component: {fileID: 2131397533}
   - component: {fileID: 2131397532}
   m_Layer: 5
-  m_Name: text_unit
+  m_Name: text_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60598,9 +60643,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnButton
   button: {fileID: 2136307864}
-  costText: {fileID: 897203793}
+  topText: {fileID: 897203793}
   iconImage: {fileID: 212375825}
-  unitText: {fileID: 13339231}
+  bottomText: {fileID: 13339231}
   cooldownText: {fileID: 715623293}
 --- !u!1001 &3823942607881473330
 PrefabInstance:

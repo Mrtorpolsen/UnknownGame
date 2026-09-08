@@ -11,14 +11,13 @@ public class ActionButton : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] private Button button;
-    [SerializeField] private TMP_Text costText;
+    [SerializeField] private TMP_Text topText;
     [SerializeField] private Image iconImage;
-    [SerializeField] private TMP_Text unitText; 
+    [SerializeField] private TMP_Text bottomText; 
     [SerializeField] private TMP_Text cooldownText; 
 
     private AsyncOperationHandle<Sprite>? iconHandle;
 
-    private float cooldown;
     private string cooldownKey;
     private Coroutine cooldownRoutine;
 
@@ -27,19 +26,12 @@ public class ActionButton : MonoBehaviour
 
     public void Setup(string title, float cost, AssetReference icon, float cooldown, Func<bool> canInteractFunc)
     {
-        unitText.text = title;
-        costText.text = cost.ToString();
+        topText.text = cost.ToString();
+        bottomText.text = title;
         canInteract = canInteractFunc;
-
-        cooldownKey = title;
 
         LoadIcon(icon);
 
-        if(cooldown > 0 && AbilityCooldownManager.Instance != null)
-        {
-            this.cooldown = cooldown;
-            AbilityCooldownManager.Instance.OnCooldownTriggered += StartCooldown;
-        }
         //Ensure cooldown text is hidden if not on cooldown
         if(cooldownText != null)
             cooldownText.text = "";
@@ -47,30 +39,48 @@ public class ActionButton : MonoBehaviour
 
     public void Setup(string title, float cost, Sprite icon, float cooldown, Func<bool> canInteractFunc)
     {
-        unitText.text = title;
-        costText.text = cost.ToString();
+        bottomText.text = title;
+        topText.text = cost.ToString();
         canInteract = canInteractFunc;
         iconImage.sprite = icon;
 
-        if (cooldown > 0 && AbilityCooldownManager.Instance != null)
-        {
-            this.cooldown = cooldown;
-            AbilityCooldownManager.Instance.OnCooldownTriggered += StartCooldown;
-        }
         //Ensure cooldown text is hidden if not on cooldown
         if (cooldownText != null)
             cooldownText.text = "";
     }
 
+    public void Setup(AbilityDefinition ability, Func<bool> canInteractFunc)
+    {
+        bottomText.text = ability.name;
+        topText.text = ability.Cost.ToString();
+        canInteract = canInteractFunc;
+        LoadIcon(ability.Icon);
+
+        if (AbilityCooldownManager.Instance != null)
+        {
+            cooldownKey = AbilityCooldownManager.Instance.GetCooldownKey(ability);
+
+            if (ability.cooldown > 0)
+            {
+                AbilityCooldownManager.Instance.OnCooldownTriggered += StartCooldown;
+            }
+        }
+
+        //Ensure cooldown text is hidden if not on cooldown
+        if (cooldownText != null)
+            cooldownText.text = "";
+    }
+
+
     public void UpdateText(string title, float cost)
     {
-        unitText.text = title;
-        costText.text = cost.ToString();
+        bottomText.text = title;
+        topText.text = cost.ToString();
     }
     public void UpdateText(string title, string cost)
     {
-        unitText.text = title;
-        costText.text = cost;
+        bottomText.text = title;
+        topText.text = cost;
     }
 
     public void OnClick()
@@ -114,9 +124,9 @@ public class ActionButton : MonoBehaviour
         };
     }
 
-    private void StartCooldown(string abilityName)
+    private void StartCooldown(string abilityKey)
     {
-        if (cooldownText == null || this.cooldownKey != abilityName)
+        if (cooldownText == null || this.cooldownKey != abilityKey)
             return;
 
         if (cooldownRoutine != null)
@@ -127,17 +137,16 @@ public class ActionButton : MonoBehaviour
         cooldownText.gameObject.SetActive(true);
 
         iconImage.rectTransform.localScale = new Vector3(0f, 1f, 1f);
-        costText.rectTransform.localScale = new Vector3(0f, 1f, 1f);
+        topText.rectTransform.localScale = new Vector3(0f, 1f, 1f);
 
-        cooldownRoutine = StartCoroutine(CooldownRoutine(abilityName));
+        cooldownRoutine = StartCoroutine(CooldownRoutine(cooldownKey));
     }
 
-    private IEnumerator CooldownRoutine(string abilityName)
+    private IEnumerator CooldownRoutine(string cooldownKey)
     {
         while (true)
         {
-            float remaining = AbilityCooldownManager.Instance.GetRemainingCooldown(abilityName, cooldown);
-
+            float remaining = AbilityCooldownManager.Instance.GetRemainingCooldown(cooldownKey);
             if (remaining <= 0)
             {
                 Refresh();
@@ -150,7 +159,7 @@ public class ActionButton : MonoBehaviour
         }
         cooldownText.text = "";
         iconImage.rectTransform.localScale = new Vector3(1f, 1f, 1f);
-        costText.rectTransform.localScale = new Vector3(1f, 1f, 1f);
+        topText.rectTransform.localScale = new Vector3(1f, 1f, 1f);
     }
 
     public void Refresh()

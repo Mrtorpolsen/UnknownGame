@@ -157,7 +157,7 @@ public class GameManager : MonoBehaviour
         if(isGameOver)
             return;
         //save score, throws error if not logged in
-        LeaderboardService.Instance.AddScore(TimerManager.Instance.GetElapsedTime(), GameSettingsService.Instance.Difficulty);
+        LeaderboardService.Instance.AddScore(TimerManager.Instance.GetElapsedTimeInMiliseconds(), GameSettingsService.Instance.Difficulty);
         //add cinders
         CurrencyManager.Instance.Add(CurrencyTypes.Cinders,
             CinderRewardCalculator.GetCinders(TimerManager.Instance.GetElapsedTimeInMinutes()));

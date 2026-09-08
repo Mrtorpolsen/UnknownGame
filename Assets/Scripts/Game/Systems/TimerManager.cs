@@ -7,15 +7,14 @@ public class TimerManager : MonoBehaviour
 
     public TMP_Text timerText;
 
-    private float startTime;
     private bool timerRunning = false;
     private float updateTimer = 0f;
     private float elapsedTime = 0f;
 
-
-    public float GetElapsedTime() => elapsedTime * 1000f;
+    public float GetElapsedTimeInSeconds() => elapsedTime;
+    public float GetElapsedTimeInMiliseconds() => elapsedTime * 1000f;
     public int GetElapsedTimeInMinutes() => Mathf.FloorToInt(elapsedTime / 60f);
-    public string GetFormattedTime() => TimeFormatter.FormatTimeMiliseconds(GetElapsedTime());
+    public string GetFormattedTime() => TimeFormatter.FormatTimeMiliseconds(GetElapsedTimeInMiliseconds());
 
     private void Awake()
     {
@@ -44,7 +43,6 @@ public class TimerManager : MonoBehaviour
 
     public void StartTimer()
     {
-        startTime = Time.time;
         timerRunning = true;
     }
 
@@ -55,7 +53,8 @@ public class TimerManager : MonoBehaviour
 
     public void ResetTimer()
     {
-        startTime = Time.time;
+        elapsedTime = 0f;
+        updateTimer = 0f;
     }
 
 }

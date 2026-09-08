@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AbilityCooldownManager : MonoBehaviour
 {
     public static AbilityCooldownManager Instance { get; private set; }
 
-    private Dictionary<string, float> lastUseTime = new();
+    private Dictionary<string, float> readyTime = new();
 
     public event Action<string> OnCooldownTriggered;
+    public event Action<string> OnCooldownComplete;
 
     private void Awake()
     {
@@ -20,25 +22,70 @@ public class AbilityCooldownManager : MonoBehaviour
         Instance = this;
     }
 
-    public bool CanUse(AbilityDefinition ability)
+    private void LateUpdate()
     {
-        if (!lastUseTime.TryGetValue(ability.DisplayName, out float last))
+        if (readyTime.Count == 0)
+            return;
+
+        var time = Time.time;
+
+        foreach (var cooldown in readyTime.ToList())
+        {
+            if (time >= cooldown.Value)
+            {
+                readyTime.Remove(cooldown.Key);
+                OnCooldownComplete?.Invoke(cooldown.Key);
+            }
+        }
+    }
+
+    public bool CanUse(AbilityDefinition ability, BaseUnitStats caster = null)
+    {
+        string key = GetCooldownKey(ability, caster);
+
+        if (!readyTime.TryGetValue(key, out float ready))
             return true;
 
-        return Time.time >= last + ability.cooldown;
+        return Time.time >= ready;
     }
 
-    public float GetRemainingCooldown(string abilityName, float cooldown)
+    public float GetRemainingCooldown(AbilityDefinition ability, BaseUnitStats caster = null)
     {
-        if (!lastUseTime.TryGetValue(abilityName, out float last))
+        string key = GetCooldownKey(ability, caster);
+
+        if (!readyTime.TryGetValue(key, out float ready))
             return 0;
 
-        return Mathf.Max(0, last + cooldown - Time.time);
+        return Mathf.Max(0, ready - Time.time);
     }
 
-    public void TriggerCooldown(string abilityName)
+    public float GetRemainingCooldown(string coolDownKey)
     {
-        lastUseTime[abilityName] = Time.time;
-        OnCooldownTriggered?.Invoke(abilityName);
+        if (!readyTime.TryGetValue(coolDownKey, out float ready))
+            return 0;
+
+        return Mathf.Max(0, ready - Time.time);
+    }
+
+    public void TriggerCooldown(AbilityDefinition ability, BaseUnitStats caster = null)
+    {
+        string key = GetCooldownKey(ability, caster);
+
+        readyTime[key] = Time.time + ability.cooldown;
+        OnCooldownTriggered?.Invoke(key);
+    }
+
+    public void TriggerCooldown(string key, float cooldown)
+    {
+        readyTime[key] = Time.time + cooldown;
+        OnCooldownTriggered?.Invoke(key);
+    }
+
+    public string GetCooldownKey(AbilityDefinition ability, BaseUnitStats caster = null)
+    {
+        if (caster == null)
+            return ability.Id;
+
+        return $"{ability.Id}_{caster.GetInstanceID()}";
     }
 }
